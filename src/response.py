@@ -19,7 +19,7 @@ GLOBAL_REQUEST_PARAM_LIST = {
     "os_version": {"type": "str", "desc": "系统版本", "reg": r"\w+", "required": False},
 }
 GLOBAL_RESPONSE_CODE_LIST = {
-    "200": (0, "成功"),
+    "200": (200, "成功"),
     "400": (400, "请求异常"),
     "401": (401, "需要验证身份"),
     "403": (403, "禁止访问"),
@@ -34,10 +34,10 @@ GLOBAL_RESPONSE_CODE_LIST = {
 
     "ERR": (-1, "未知错误"),
 
-    "OK": (0, "成功"),
-    "SUCCESS": (0, "成功"),
-    "ERROR": (1, "错误"),
-    "FAILED": (1, "失败"),
+    "OK": (200, "成功"),
+    "SUCCESS": (200, "成功"),
+    "ERROR": (500, "错误"),
+    "FAILED": (500, "失败"),
 
     "DB_CONN_FAILED": (10, "数据库连接失败"),
     "SQL_ERROR": (11, "SQL错误"),

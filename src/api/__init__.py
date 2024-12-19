@@ -67,18 +67,18 @@ def api_return(code, msg=None, data=None, **kwargs):
     return json_return(result)
 
 
-@api.before_request
-def before_request():
-    """蓝图请求前处理函数"""
-    for field_name, p in getattr(current_app.blueprints.get(request.blueprint, current_app), "COMMON_REQUEST_PARAM_LIST", dict()).items():     # 验证公共参数
-        field_reg = p.get("reg")
-        field_required = p.get("required")
-        field_data = str(g.request_data.get(field_name, "")).strip()
-        if field_required and re.search(field_reg, str(field_data)) is None:
-            current_app.logger.error(f"公共参数错误：{field_name}:{field_data}")
-            return api_return("PARAM_ERROR", f"公共参数错误：{field_name}")
-        setattr(g, field_name, field_data)
-    g.client_info = f"{g.get('app_channel', '')}-{g.get('os_type', '')}-{g.get('device_uuid', '')}"
+# @api.before_request
+# def before_request():
+#     """蓝图请求前处理函数"""
+#     for field_name, p in getattr(current_app.blueprints.get(request.blueprint, current_app), "COMMON_REQUEST_PARAM_LIST", dict()).items():     # 验证公共参数
+#         field_reg = p.get("reg")
+#         field_required = p.get("required")
+#         field_data = str(g.request_data.get(field_name, "")).strip()
+#         if field_required and re.search(field_reg, str(field_data)) is None:
+#             current_app.logger.error(f"公共参数错误：{field_name}:{field_data}")
+#             return api_return("PARAM_ERROR", f"公共参数错误：{field_name}")
+#         setattr(g, field_name, field_data)
+#     g.client_info = f"{g.get('app_channel', '')}-{g.get('os_type', '')}-{g.get('device_uuid', '')}"
 
 
 @api.errorhandler(TokenErr)
@@ -129,4 +129,4 @@ def logout_user():
 
 
 # 导入蓝图要加载的接口
-from . import base
+from . import demo
