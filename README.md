@@ -1,5 +1,5 @@
-# pyapi
-pyapi是一个基于Flask框架的api项目脚手架，是从实际应用中精简而来，用于快速构建api项目，或者用于Flask框架初学者上手。
+# flask-api-temlate
+flask-api-temlate是一个基于Flask框架的api项目脚手架，是从实际应用中精简而来，用于快速构建api项目，或者用于Flask框架初学者上手。
 
 
 ## 简要说明
@@ -54,7 +54,3 @@ pyapi是一个基于Flask框架的api项目脚手架，是从实际应用中精�
 ## 相关文档
 - [Flask中文文档](https://dormousehole.readthedocs.io/en/latest/)
 - [uWSGI中文文档](https://uwsgi-docs-zh.readthedocs.io/zh_CN/latest/index.html)
-
-
-## 买杯咖啡支持一下
-<img src="./pay4coffee.png" width="400" height="200" alt="买杯咖啡支持一下" align=center />
