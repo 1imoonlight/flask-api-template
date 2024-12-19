@@ -44,8 +44,7 @@ flask-api-temlate是一个基于Flask框架的api项目脚手架，是从实际�
 
 #### 运行程序
     在开发环境中（以pychram举例），配置【Run/Debug configurations】，选择正确的解释器，在module模式内输入【flask】，脚本参数输入【run】，如需要prod环境可在环境变量里加入【APP_ENV=prod】。
-    在生产环境中（以CentOS/Ubuntu举例），配置run.sh中uWSGI程序的正确路径，配置uWSGI的启动端口，然后运行脚本即可。脚本内默认使用prod环境启动，如需要dev环境可在run.sh脚本中修改app_env配置。
-    需要注意的是示例脚本中uWSGI是以socket形式启动的，需要配置Web服务器作为代理（如Nginx）。或者将run.sh的start函数中用于uWSGI启动的【-s ${host}:${port}】命令项改为【--http-socket ${host}:${port}】这样就能直接访问了。
+    生产环境中，使用的是docker容器，在容器中使用的是uWSGI启动，所以需要先构建镜像，然后运行容器。
 
 #### 开始使用
     可以先使用示例接口里的注册接口进行账号注册，然后将接口返回的token字段放到请求头中，然后再请求其他几个接口。
