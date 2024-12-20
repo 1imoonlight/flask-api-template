@@ -58,7 +58,7 @@ class MemCache(SimpleCache):
 
     def init_app(self, app, key_prefix="", key_timeout=None, threshold=1000):
         self._threshold = threshold
-        self.key_prefix = f"{app.name}_{key_prefix+"_" if key_prefix else self.key_prefix}"
+        self.key_prefix = f"{app.name}_{key_prefix+'_' if key_prefix else ''}{self.key_prefix}"
         self.key_timeout = key_timeout if key_timeout else self.key_timeout
 
     def _normalize_timeout(self, timeout):
@@ -121,7 +121,7 @@ class RedisCache:
 
     def init_app(self, app, redis_uri="", key_prefix="", key_timeout=None, **kwargs):
         self.redis_uri = redis_uri if redis_uri else app.config.get("REDIS_URI", self.redis_uri)
-        self.key_prefix = f"{app.name}_{key_prefix+"_" if key_prefix else self.key_prefix}"
+        self.key_prefix = f"{app.name}_{key_prefix+'_' if key_prefix else ''}{self.key_prefix}"
         self.key_timeout = key_timeout if key_timeout else self.key_timeout
 
         try:
