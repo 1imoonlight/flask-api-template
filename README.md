@@ -1,4 +1,6 @@
 # flask-api-temlate
+[![wakatime](https://wakatime.com/badge/user/b935ab8b-aa4b-4ff5-97d7-3cc32b8296c7/project/baf572e5-57aa-4daa-a988-d0d4d5580838.svg)](https://wakatime.com/badge/user/b935ab8b-aa4b-4ff5-97d7-3cc32b8296c7/project/baf572e5-57aa-4daa-a988-d0d4d5580838)
+
 flask-api-temlate是一个基于Flask框架的api项目脚手架，是从实际应用中精简而来，用于快速构建api项目，或者用于Flask框架初学者上手。
 
 
